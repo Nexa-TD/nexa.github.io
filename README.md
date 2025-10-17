@@ -4,3 +4,4 @@
 # Product: Checo, an interactive carbon emission tracker aimed to help users track and reduce their carbon footprint
 # Through interactive challenges and tasks, aimed at getting the user walking, reducing waste(light,water,plastic) and avoiding high
 # fossil fuel consumption
+# Product: "Checo", an interactive carbon emission tracker aimed to help users track and reduce their carbon footprint Through interactive challenges and tasks, aimed at getting the user walking, reducing waste(light,water,plastic) and avoiding high fossil fuel consumption
