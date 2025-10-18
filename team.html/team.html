@@ -2,290 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us | EcoCheck</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ===== EcoCheck Theme: green + black ===== */
-    :root{
-      --bg: #0b0e0c;           /* near-black */
-      --panel: #111512;        /* dark panel */
-      --muted: #a6b2a8;        /* soft gray-green */
-      --text: #e7f2ea;         /* off-white */
-      --accent: #22c55e;       /* green */
-      --accent-2:#16a34a;      /* darker green */
-      --ring: rgba(34,197,94,.35);
-      --border:#1c221e;
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: radial-gradient(1200px 600px at 50% -10%, rgba(34,197,94,.08), transparent 60%), var(--bg);
-    }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{color:var(--accent-2)}
-    .wrap{max-width:1200px; margin:40px auto; padding:0 20px}
-    h1{
-      text-align:center;
-      font-size: clamp(28px, 3.6vw, 44px);
-      margin: 0 0 10px;
-      letter-spacing:.5px;
-    }
-    p.lead{color:var(--muted); text-align:center; margin:0 0 30px}
-
-    /* ===== layout: left = team, right = form/info ===== */
-    .grid{
-      display:grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap:28px;
-      align-items:start;
-    }
-    @media (max-width: 960px){
-      .grid{grid-template-columns:1fr}
-    }
-    .card{
-      background:linear-gradient(180deg, rgba(34,197,94,.06), transparent 45%), var(--panel);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    .pad{padding:22px}
-
-    /* ===== team grid (2 per row, 6 total) ===== */
-    .team{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:16px;
-    }
-    @media (max-width: 520px){ .team{ grid-template-columns:1fr } }
-
-    .person{
-      display:flex; gap:12px; align-items:center;
-      padding:12px; border:1px solid var(--border); border-radius:14px;
-      background: #0e130f;
-    }
-    .avatar{
-      width:64px; height:64px; border-radius:50%; overflow:hidden; flex:0 0 64px;
-      border:2px solid rgba(34,197,94,.45); box-shadow:0 0 0 4px rgba(34,197,94,.08);
-      background: #0a0d0b;
-      display:grid; place-items:center; color:#8bf0b6; font-weight:700;
-    }
-    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
-    .who .name{font-weight:700}
-    .who .email{font-size:14px; color:var(--muted)}
-    .meet{
-      margin-top:18px; text-align:center; letter-spacing:2px;
-      font-weight:900; font-size: clamp(18px, 2.6vw, 28px);
-      color:#c5f7d8; text-transform:uppercase;
-    }
-
-    /* ===== form ===== */
-    form .row{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    @media (max-width:560px){ form .row{grid-template-columns:1fr} }
-    .field{margin-bottom:14px}
-    label{display:block; font-size:14px; color:var(--muted); margin:0 0 6px}
-    input, textarea{
-      width:100%; background:#0b100c; color:var(--text);
-      border:1px solid var(--border); border-radius:12px; padding:12px 14px; font:inherit;
-      transition: border-color .15s, box-shadow .15s, transform .02s;
-    }
-    input::placeholder, textarea::placeholder{color:#7a8a7f}
-    input:focus, textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
-    textarea{min-height:140px; resize:vertical}
-    .btn{
-      display:inline-block; border:0; border-radius:999px; background:var(--accent);
-      color:#0a0e0b; padding:12px 18px; font-weight:800; cursor:pointer;
-      box-shadow:0 6px 24px rgba(34,197,94,.25);
-    }
-    .btn:hover{background:var(--accent-2)}
-    .muted{color:var(--muted); font-size:14px}
-
-    /* ===== info / socials ===== */
-    .vstack{display:grid; gap:18px}
-    .info h2{margin:0 0 8px; font-size:22px}
-    .info p{margin:0 0 16px; color:var(--muted)}
-    .list{display:grid; gap:10px}
-    .item{display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start}
-    .item svg{width:22px; height:22px; color:var(--accent)}
-    .socials{display:flex; gap:10px}
-    .soc-btn{
-      width:40px; height:40px; border-radius:50%; display:grid; place-items:center;
-      background:#0b100c; border:1px solid var(--border)
-    }
-    .soc-btn:hover{border-color:#1f2a23; background:#0f1511}
-  </style>
 </head>
 <body>
-  <main class="wrap">
+
+  <!-- Centered heading (HTML-only) -->
+  <center>
     <h1>Contact Us</h1>
-    <p class="lead">We’re helping teams reduce their carbon footprint. Reach out—let’s build greener together.</p>
+    <p>We’re helping teams reduce their carbon footprint. Reach out—let’s build greener together.</p>
+  </center>
 
-    <section class="grid">
-      <!-- LEFT: TEAM GRID (2 per row, 6 total) -->
-      <aside class="card pad">
-        <div class="team">
-          <!-- Person 1 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar1.jpg" alt="Profile of Abdallah Ismail" onerror="this.parentNode.textContent='AI'" /></div>
-            <div class="who">
-              <div class="name">Abdallah Ismail</div>
-              <a class="email" href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
-            </div>
-          </div>
-          <!-- Person 2 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar2.jpg" alt="Profile of Canaan Elwafi" onerror="this.parentNode.textContent='CE'" /></div>
-            <div class="who">
-              <div class="name">Canaan Elwafi</div>
-              <a class="email" href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
-            </div>
-          </div>
-          <!-- Person 3 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar3.jpg" alt="Profile of Yao Kloma" onerror="this.parentNode.textContent='YK'" /></div>
-            <div class="who">
-              <div class="name">Yao Kloma</div>
-              <a class="email" href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
-            </div>
-          </div>
-          <!-- Person 4 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar4.jpg" alt="Profile of Loryann Kamdem" onerror="this.parentNode.textContent='LK'" /></div>
-            <div class="who">
-              <div class="name">Loryann Kamdem</div>
-              <a class="email" href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
-            </div>
-          </div>
-          <!-- Person 5 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar5.jpg" alt="Profile of Carl Tadross" onerror="this.parentNode.textContent='CT'" /></div>
-            <div class="who">
-              <div class="name">Carl Tadross</div>
-              <a class="email" href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
-            </div>
-          </div>
-          <!-- Person 6 -->
-          <div class="person">
-            <div class="avatar"><img src="assets/avatar6.jpg" alt="Profile of Pascal Ngabire" onerror="this.parentNode.textContent='PN'" /></div>
-            <div class="who">
-              <div class="name">Pascal Ngabire</div>
-              <a class="email" href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
-            </div>
-          </div>
-        </div>
+  <main>
+    <!-- LEFT: Team grid (2 per row, 6 total) -->
+    <section aria-labelledby="team-title">
+      <h2 id="team-title">Meet the Team</h2>
 
-        <div class="meet">MEET TEAM NEXA</div>
-      </aside>
+      <!-- Using a table so it shows 2 per row without CSS -->
+      <table border="0" cellpadding="8" cellspacing="0">
+        <tbody>
+          <tr>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar1.jpg" alt="Profile photo of Abdallah Ismail" width="120" height="120">
+                <figcaption>
+                  <strong>Abdallah Ismail</strong><br>
+                  <a href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar2.jpg" alt="Profile photo of Canaan Elwafi" width="120" height="120">
+                <figcaption>
+                  <strong>Canaan Elwafi</strong><br>
+                  <a href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+          </tr>
 
-      <!-- RIGHT: CONTACT FORM + INFO -->
-      <div class="vstack">
-        <div class="card pad">
-          <form action="#" method="post" aria-label="Contact form">
-            <div class="row">
-              <div class="field">
-                <label for="fullname">Full Name</label>
-                <input id="fullname" name="fullname" type="text" placeholder="e.g., Abdallah Ismail" required />
-              </div>
-              <div class="field">
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="you@ecocheck.example" required />
-              </div>
-            </div>
+          <tr>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar3.jpg" alt="Profile photo of Yao Kloma" width="120" height="120">
+                <figcaption>
+                  <strong>Yao Kloma</strong><br>
+                  <a href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar4.jpg" alt="Profile photo of Loryann Kamdem" width="120" height="120">
+                <figcaption>
+                  <strong>Loryann Kamdem</strong><br>
+                  <a href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+          </tr>
 
-            <div class="row">
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+1 (613) 555-1234" />
-              </div>
-              <div class="field">
-                <label for="subject">Subject (optional)</label>
-                <input id="subject" name="subject" type="text" placeholder="What’s this about?" />
-              </div>
-            </div>
+          <tr>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar5.jpg" alt="Profile photo of Carl Tadross" width="120" height="120">
+                <figcaption>
+                  <strong>Carl Tadross</strong><br>
+                  <a href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+            <td valign="top" align="center">
+              <figure>
+                <img src="assets/avatar6.jpg" alt="Profile photo of Pascal Ngabire" width="120" height="120">
+                <figcaption>
+                  <strong>Pascal Ngabire</strong><br>
+                  <a href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
+                </figcaption>
+              </figure>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-            </div>
+      <!-- Big label under the grid -->
+      <h2>MEET TEAM NEXA</h2>
+    </section>
 
-            <button class="btn" type="submit">Contact Us</button>
-            <p class="muted" style="margin-top:10px;">By submitting, you agree we can contact you about your request.</p>
-          </form>
-        </div>
+    <hr>
 
-        <aside class="card pad info">
-          <h2>EcoCheck</h2>
-          <p>Based in Ottawa, CA. We help organizations track and reduce their carbon footprint.</p>
+    <!-- RIGHT: Contact form -->
+    <section aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Send Us a Message</h2>
 
-          <div class="list" role="list">
-            <div class="item" role="listitem">
-              <!-- Mail -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                <path d="m22 6-10 7L2 6"/>
-              </svg>
-              <div>
-                <div><strong>Email</strong></div>
-                <div class="muted">hello@ecocheck.example</div>
-              </div>
-            </div>
-            <div class="item" role="listitem">
-              <!-- Phone -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.11a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <div>
-                <div><strong>Phone</strong></div>
-                <div class="muted">+1 (613) 555-0199</div>
-              </div>
-            </div>
-            <div class="item" role="listitem">
-              <!-- Pin -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <div>
-                <div><strong>Location</strong></div>
-                <div class="muted">Ottawa, Ontario</div>
-              </div>
-            </div>
-          </div>
+      <form action="#" method="post">
+        <p>
+          <label for="fullname">Full Name</label><br>
+          <input id="fullname" name="fullname" type="text" placeholder="e.g., Abdallah Ismail" required>
+        </p>
 
-          <div style="margin-top:10px"><strong>Our socials</strong></div>
-          <div class="socials" aria-label="Social media links">
-            <a class="soc-btn" href="#" aria-label="Facebook" title="Facebook">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                <path d="M22 12.06C22 6.49 17.52 2 12 2S2 6.49 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.91h-2.34V22C18.34 21.2 22 17.08 22 12.06z"/>
-              </svg>
-            </a>
-            <a class="soc-btn" href="#" aria-label="Instagram" title="Instagram">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-              </svg>
-            </a>
-            <a class="soc-btn" href="#" aria-label="X (Twitter)" title="X">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                <path d="M18.244 2H21L13.5 10.5 22 22h-6l-4.9-6.3L5.5 22H2l7.9-9.3L2.5 2h6l4.4 5.8L18.244 2z"/>
-              </svg>
-            </a>
-          </div>
-        </aside>
-      </div>
+        <p>
+          <label for="email">E-mail</label><br>
+          <input id="email" name="email" type="email" placeholder="you@ecocheck.example" required>
+        </p>
+
+        <p>
+          <label for="phone">Phone Number</label><br>
+          <input id="phone" name="phone" type="tel" placeholder="+1 (613) 555-1234">
+        </p>
+
+        <p>
+          <label for="subject">Subject (optional)</label><br>
+          <input id="subject" name="subject" type="text" placeholder="What’s this about?">
+        </p>
+
+        <p>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Contact Us</button>
+        </p>
+
+        <p>By submitting, you agree we can contact you about your request.</p>
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- Company info / socials (plain HTML list) -->
+    <section aria-labelledby="info-title">
+      <h2 id="info-title">EcoCheck</h2>
+      <p>Based in Ottawa, CA. We help organizations track and reduce their carbon footprint.</p>
+
+      <ul>
+        <li><strong>Email:</strong> hello@ecocheck.example</li>
+        <li><strong>Phone:</strong> +1 (613) 555-0199</li>
+        <li><strong>Location:</strong> Ottawa, Ontario</li>
+      </ul>
+
+      <h3>Our Socials</h3>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">X (Twitter)</a></li>
+      </ul>
     </section>
   </main>
 
-  <!-- demo only -->
-  <script>
-    document.querySelector('form')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thanks! Message submitted (demo). Swap in Formspree/Netlify or a backend later.');
-    });
-  </script>
 </body>
 </html>
