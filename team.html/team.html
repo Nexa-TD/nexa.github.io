@@ -2,154 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Contact Us | EcoCheck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Team | EcoCheck</title>
+  <style>
+    /* ===== BASIC THEME ===== */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9 50%, #ffffff 50%);
+      color: #1b5e20;
+      text-align: center;
+    }
+
+    h1 {
+      background-color: #2e7d32;
+      color: white;
+      padding: 30px 0;
+      margin: 0;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-top: 40px;
+    }
+
+    /* ===== TEAM GRID ===== */
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .member {
+      background-color: white;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      width: 220px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .member:hover {
+      transform: scale(1.05);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #2e7d32;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .member strong {
+      display: block;
+      font-size: 16px;
+      color: #1b5e20;
+    }
+
+    .member a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .member a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACT FORM ===== */
+    form {
+      background-color: white;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #2e7d32;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
+  <h1>Meet the Team</h1>
 
-  <!-- Centered heading (HTML-only) -->
-  <center>
-    <h1>Contact Us</h1>
-    <p>We’re helping teams reduce their carbon footprint. Reach out—let’s build greener together.</p>
-  </center>
+  <!-- TEAM MEMBERS -->
+  <div class="team-container">
+    <div class="member">
+      <img src="assets/avatar1.jpg" alt="Abdallah Ismail">
+      <strong>Abdallah Ismail</strong>
+      <a href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
+    </div>
 
-  <main>
-    <!-- LEFT: Team grid (2 per row, 6 total) -->
-    <section aria-labelledby="team-title">
-      <h2 id="team-title">Meet the Team</h2>
+    <div class="member">
+      <img src="assets/avatar2.jpg" alt="Canaan Elwafi">
+      <strong>Canaan Elwafi</strong>
+      <a href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
+    </div>
 
-      <!-- Using a table so it shows 2 per row without CSS -->
-      <table border="0" cellpadding="8" cellspacing="0">
-        <tbody>
-          <tr>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar1.jpg" alt="Profile photo of Abdallah Ismail" width="120" height="120">
-                <figcaption>
-                  <strong>Abdallah Ismail</strong><br>
-                  <a href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar2.jpg" alt="Profile photo of Canaan Elwafi" width="120" height="120">
-                <figcaption>
-                  <strong>Canaan Elwafi</strong><br>
-                  <a href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-          </tr>
+    <div class="member">
+      <img src="assets/avatar3.jpg" alt="Yao Kloma">
+      <strong>Yao Kloma</strong>
+      <a href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
+    </div>
 
-          <tr>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar3.jpg" alt="Profile photo of Yao Kloma" width="120" height="120">
-                <figcaption>
-                  <strong>Yao Kloma</strong><br>
-                  <a href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar4.jpg" alt="Profile photo of Loryann Kamdem" width="120" height="120">
-                <figcaption>
-                  <strong>Loryann Kamdem</strong><br>
-                  <a href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-          </tr>
+    <div class="member">
+      <img src="assets/avatar4.jpg" alt="Loryann Kamdem">
+      <strong>Loryann Kamdem</strong>
+      <a href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
+    </div>
 
-          <tr>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar5.jpg" alt="Profile photo of Carl Tadross" width="120" height="120">
-                <figcaption>
-                  <strong>Carl Tadross</strong><br>
-                  <a href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-            <td valign="top" align="center">
-              <figure>
-                <img src="assets/avatar6.jpg" alt="Profile photo of Pascal Ngabire" width="120" height="120">
-                <figcaption>
-                  <strong>Pascal Ngabire</strong><br>
-                  <a href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
-                </figcaption>
-              </figure>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="member">
+      <img src="assets/avatar5.jpg" alt="Carl Tadross">
+      <strong>Carl Tadross</strong>
+      <a href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
+    </div>
 
-      <!-- Big label under the grid -->
-      <h2>MEET TEAM NEXA</h2>
-    </section>
+    <div class="member">
+      <img src="assets/avatar6.jpg" alt="Pascal Ngabire">
+      <strong>Pascal Ngabire</strong>
+      <a href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
+    </div>
+  </div>
 
-    <hr>
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <label for="fullname">Full Name</label>
+    <input id="fullname" name="fullname" type="text" placeholder="e.g., Abdallah Ismail" required>
 
-    <!-- RIGHT: Contact form -->
-    <section aria-labelledby="contact-form-title">
-      <h2 id="contact-form-title">Send Us a Message</h2>
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" placeholder="you@ecocheck.example" required>
 
-      <form action="#" method="post">
-        <p>
-          <label for="fullname">Full Name</label><br>
-          <input id="fullname" name="fullname" type="text" placeholder="e.g., Abdallah Ismail" required>
-        </p>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-        <p>
-          <label for="email">E-mail</label><br>
-          <input id="email" name="email" type="email" placeholder="you@ecocheck.example" required>
-        </p>
+    <button type="submit">Send Message</button>
+  </form>
 
-        <p>
-          <label for="phone">Phone Number</label><br>
-          <input id="phone" name="phone" type="tel" placeholder="+1 (613) 555-1234">
-        </p>
+  <footer>
+    <p>EcoCheck © 2025 — Building a Greener Future 🌿</p>
+  </footer>
 
-        <p>
-          <label for="subject">Subject (optional)</label><br>
-          <input id="subject" name="subject" type="text" placeholder="What’s this about?">
-        </p>
-
-        <p>
-          <label for="message">Message</label><br>
-          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-        </p>
-
-        <p>
-          <button type="submit">Contact Us</button>
-        </p>
-
-        <p>By submitting, you agree we can contact you about your request.</p>
-      </form>
-    </section>
-
-    <hr>
-
-    <!-- Company info / socials (plain HTML list) -->
-    <section aria-labelledby="info-title">
-      <h2 id="info-title">EcoCheck</h2>
-      <p>Based in Ottawa, CA. We help organizations track and reduce their carbon footprint.</p>
-
-      <ul>
-        <li><strong>Email:</strong> hello@ecocheck.example</li>
-        <li><strong>Phone:</strong> +1 (613) 555-0199</li>
-        <li><strong>Location:</strong> Ottawa, Ontario</li>
-      </ul>
-
-      <h3>Our Socials</h3>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">X (Twitter)</a></li>
-      </ul>
-    </section>
-  </main>
-
+  <script>
+    
+    document.getElementById("contact-form").addEventListener("submit", function(event){
+      event.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you soon.");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
+
