@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9 50%, #ffffff 50%);
+      color: #1b5e20;
+      text-align: center;
+    }
+
+    h1 {
+      background-color: #2e7d32;
+      color: white;
+      padding: 30px 0;
+      margin: 0;
+    }
+
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+    }
+
+    .plan {
+      background-color: white;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      width: 280px;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .plan:hover {
+      transform: scale(1.05);
+    }
+
+    .plan h2 {
+      color: #2e7d32;
+    }
+
+    .plan .icon {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    .plan p.price {
+      font-size: 22px;
+      color: #1b5e20;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 8px 0;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Pricing Plans</h1>
+
+  <div class="pricing-container">
+    <!-- Free Plan -->
+    <div class="plan">
+      <h2>Free Plan</h2>
+      <div class="icon">🌿</div>
+      <p class="price">$0 / month</p>
+      <ul>
+        <li>Basic access (limited)</li>
+        <li>Up to 5 Challenges</li>
+        <li>Email support (limited)</li>
+        <li>Community updates</li>
+        <li>Limited integrations</li>
+      </ul>
+      <button>Select</button>
+    </div>
+
+    <!-- Ecosaver Plan -->
+    <div class="plan">
+      <h2>Ecosaver Plan</h2>
+      <div class="icon">🌱</div>
+      <p class="price">$10 / month</p>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Unlimited Challenges</li>
+        <li>Priority email support</li>
+        <li>Advanced integrations</li>
+        <li>Monthly insights</li>
+      </ul>
+      <button>Select</button>
+    </div>
+
+    <!-- Echoplus Plan -->
+    <div class="plan">
+      <h2>Echoplus Plan</h2>
+      <div class="icon">🚀</div>
+      <p class="price">$20 / month</p>
+      <ul>
+        <li>Everything in Ecosaver</li>
+        <li>Dedicated support</li>
+        <li>Custom integrations</li>
+        <li>Bonus rewards</li>
+        <li></li>
+      </ul>
+      <button>Select</button>
+    </div>
+  </div>
+</body>
+</html>
