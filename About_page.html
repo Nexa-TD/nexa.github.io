@@ -3,50 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <title>About Us</title>
+
+
+  <style>
+    /* Navbar */
+    ul {
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    ul li a.active {
+      background-color: rgb(7, 136, 22);
+    }
+
+    li {
+      float: left;
+    }
+
+    li a, .dropbtn {
+      display: inline-block;
+      color: rgb(149, 213, 154);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(7, 136, 22);
+      transition: 100ms;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgb(149, 213, 154);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 2000;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgb(7, 136, 22);
+      transition: 100ms;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Header */
+    h1 {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      background-color: green;
+      margin-bottom: 0;
+      font-size: 2rem;
+    }
+
+    /* Layout */
+    body {
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #333;
+}
+
+
+
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    /* Mission Section */
+    .mission {
+      flex: 1;
+      background-color: white;
+      padding: 40px;
+      margin-right: 5px;
+      border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .mission h2 {
+      margin-top: 0;
+      text-align: center;
+      color: lightgreen;
+      background-color: black;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .mission p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    
+    .fact {
+      flex: 1;
+      padding: 40px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .fact h2 {
+      text-align: center;
+      background-color: darkgreen;
+      padding: 15px;
+      margin-top: 0;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #4caf50;
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    button {
+      background-color: #078816;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+    }
+
+    button:hover {
+      background-color: #056b12;
+      transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Hidden quiz state */
+    .hidden {
+      display: none;
+    }
+
+    .intro {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+  </style>
 </head>
 <body>
-    <h1 style="text-align: center;">About us</h1>
-    <div style="display: flex; height: 100vh;">
-  
+  <ul>
+    <li><a class="active" href="../Home/home.html">Company Logo Here</a></li>
+    <li><a href="About_page.html">About</a></li>
+    <li><a href="../pricing/Pricing.html">Pricing</a></li>
+    <li><a href="Shop.html">Store</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Services</a>
+      <div class="dropdown-content">
+        <a href="../team.html/team.html">Contact</a>
+        <a href="Reviews.html">Reviews</a>
+        <a href="login_signup.html">Login/Signup</a>
+      </div>
+    </li>
+  </ul>
 
-  <div style="flex: 1; padding: 20px;">
-    <h2>Our Mission</h2>
-    <p>Empower consumers with clear, trustworthy information on the environmental impacts of everyday products.</p>
-    <p>Making sustainable choices SIMPLE, ACCESSIBLE, and REWARDING.</p>
+  <h1>About Us</h1>
+
+  <div class="container">
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>Empower consumers with clear, trustworthy information on the environmental impacts of everyday products.</p>
+      <p>Making sustainable choices SIMPLE, ACCESSIBLE, and REWARDING.</p>
+    </section>
+
+    <section class="fact">
+      <div class="intro" id="intro">
+        <h2>Wanna play a little fun fact game?</h2>
+        <button id="startQuiz">Okay</button>
+      </div>
+
+      <div id="quiz" class="hidden">
+        <h2>Fun Fact</h2>
+        <p>Did you know that recycled aluminum saves 95% of the energy needed to make new aluminum?</p>
+
+        <form>
+          <fieldset>
+            <legend>Question 1</legend>
+            <p>How much energy does recycling aluminum save compared to making new aluminum?</p>
+            <label><input type="radio" name="q1"> 25%</label><br>
+            <label><input type="radio" name="q1"> 50%</label><br>
+            <label><input type="radio" name="q1"> 95%</label><br>
+            <label><input type="radio" name="q1"> 10%</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Question 2</legend>
+            <p>Which of these materials takes the longest to decompose?</p>
+            <label><input type="radio" name="q2"> Paper</label><br>
+            <label><input type="radio" name="q2"> Plastic bottle</label><br>
+            <label><input type="radio" name="q2"> Apple core</label><br>
+            <label><input type="radio" name="q2"> Cotton shirt</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Question 3</legend>
+            <p>What gas do trees absorb from the atmosphere?</p>
+            <label><input type="radio" name="q3"> Oxygen</label><br>
+            <label><input type="radio" name="q3"> Nitrogen</label><br>
+            <label><input type="radio" name="q3"> Carbon Dioxide</label><br>
+            <label><input type="radio" name="q3"> Hydrogen</label>
+          </fieldset>
+
+          <button type="submit">Submit Answers</button>
+        </form>
+      </div>
+    </section>
   </div>
 
-  <div style="flex: 1; padding: 20px;">
-    <h2>Fun Fact</h2>
-    <p>Did you know that recycled aluminum saves 95% of the energy needed to make new aluminum?</p>
+  <script>
+    const startBtn = document.getElementById('startQuiz');
+    const intro = document.getElementById('intro');
+    const quiz = document.getElementById('quiz');
 
-    <form>
-      <fieldset>
-        <legend>Question 1</legend>
-        <p>How much energy does recycling aluminum save compared to making new aluminum?</p>
-        <label><input type="radio" name="q1"> 25%</label><br>
-        <label><input type="radio" name="q1"> 50%</label><br>
-        <label><input type="radio" name="q1"> 95%</label><br>
-        <label><input type="radio" name="q1"> 10%</label>
-      </fieldset>
-      <fieldset>
-        <legend>Question 2</legend>
-        <p>Which of these materials takes the longest to decompose?</p>
-        <label><input type="radio" name="q2"> Paper</label><br>
-        <label><input type="radio" name="q2"> Plastic bottle</label><br>
-        <label><input type="radio" name="q2"> Apple core</label><br>
-        <label><input type="radio" name="q2"> Cotton shirt</label>
-      </fieldset>
-      <fieldset>
-        <legend>Question 3</legend>
-        <p>What gas do trees absorb from the atmosphere?</p>
-        <label><input type="radio" name="q3"> Oxygen</label><br>
-        <label><input type="radio" name="q3"> Nitrogen</label><br>
-        <label><input type="radio" name="q3"> Carbon Dioxide</label><br>
-        <label><input type="radio" name="q3"> Hydrogen</label>
-      </fieldset>
-      <br>
-      <button type="submit">Submit Answers</button>
-  </div>
-  </div>
+    startBtn.addEventListener('click', () => {
+      intro.classList.add('hidden');
+      quiz.classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
+
+>>>>>>
