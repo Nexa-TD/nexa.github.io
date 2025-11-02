@@ -1,5 +1,5 @@
-const STAGGER = 160; 
-  const INITIAL_DELAY = 140;
+const STAGGER = 200; 
+const INITIAL_DELAY = 100;
 
   document.addEventListener('DOMContentLoaded', () => {
     const items = Array.from(document.querySelectorAll('.faqs-item'));
