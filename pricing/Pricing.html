@@ -1,135 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing Plans</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #e8f5e9 50%, #ffffff 50%);
-      color: #1b5e20;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checo – Pricing</title>
+<style>
+  :root{
+    --nav-bg: #000000;
+    --nav-link: rgb(149, 213, 154);
+    --nav-active: rgb(7, 136, 22);
+    --page-bg: rgb(34, 51, 35);
+    --card-bg: #0e1a0f;
+    --card-border: rgb(7, 136, 22);
+    --accent: rgb(7, 136, 22);
+    --muted: rgba(255,255,255,0.85);
+  }
 
-    h1 {
-      background-color: #2e7d32;
-      color: white;
-      padding: 30px 0;
-      margin: 0;
-    }
+  /* Base */
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+  body { background: var(--page-bg); color: #fff; }
 
-    .pricing-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 20px;
-    }
+  /* NAV (bug-free: sticky + flex, no floats) */
+  .site-nav {
+    position: sticky; /* stays on top without overlapping content */
+    top: 0;
+    z-index: 1000;
+    background: var(--nav-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand {
+    color: var(--nav-link);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* avoid overflow on small screens */
+  }
+  .menu a, .dropbtn {
+    display: inline-block;
+    color: var(--nav-link);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+  .menu a:hover, .dropdown:hover .dropbtn { background: var(--nav-active); color: #fff; }
+  .menu a.active { background: var(--nav-active); color: #fff; }
 
-    .plan {
-      background-color: white;
-      border: 2px solid #2e7d32;
-      border-radius: 12px;
-      width: 280px;
-      padding: 25px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
+  /* Dropdown (pure CSS; works on hover and keyboard focus) */
+  .dropdown { position: relative; }
+  .dropdown-content {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    display: none;
+    min-width: 180px;
+    background: rgb(149, 213, 154);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1100;
+  }
+  .dropdown-content a {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .dropdown-content a:hover { background: var(--nav-active); }
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content { display: block; }
 
-    .plan:hover {
-      transform: scale(1.05);
-    }
+  /* Header */
+  .page-header {
+    text-align: center;
+    background: var(--accent);
+    color: #fff;
+    padding: 32px 16px;
+  }
+  .page-header h1 { margin: 0; font-size: 34px; letter-spacing: 0.5px; }
 
-    .plan h2 {
-      color: #2e7d32;
-    }
+  /* Pricing grid */
+  .pricing-wrap {
+    background: linear-gradient(180deg, var(--page-bg) 0%, var(--accent) 200%);
+  }
+  .pricing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 16px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .plan {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    width: 320px;
+    max-width: 100%;
+    padding: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .plan:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,0.5); }
+  .plan h2 { margin: 0 0 8px; color: var(--nav-link); font-size: 22px; }
+  .icon { font-size: 70px; margin: 8px 0 6px; }
+  .price { font-size: 22px; color: var(--nav-link); margin: 8px 0 16px; }
 
-    .plan .icon {
-      font-size: 48px;
-      margin: 10px 0;
-    }
+  .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .features li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .features li:last-child { border-bottom: 0; }
 
-    .plan p.price {
-      font-size: 22px;
-      color: #1b5e20;
-      margin-bottom: 15px;
-    }
+  .select-btn {
+    margin-top: 18px;
+    align-self: center;
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .select-btn:hover { background: #0b6d19; }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      text-align: left;
-    }
-
-    ul li {
-      margin: 8px 0;
-    }
-
-    button {
-      background-color: #2e7d32;
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    button:hover {
-      background-color: #1b5e20;
-    }
-  </style>
+  /* Footer */
+  footer {
+    background: #000;
+    color: var(--nav-link);
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+  }
+</style>
 </head>
 <body>
-  <h1>Our Pricing Plans</h1>
 
-  <div class="pricing-container">
-    <!-- Free Plan -->
-    <div class="plan">
-      <h2>Free Plan</h2>
-      <div class="icon">🌿</div>
-      <p class="price">$0 / month</p>
-      <ul>
-        <li>Basic access (limited)</li>
-        <li>Up to 5 Challenges</li>
-        <li>Email support (limited)</li>
-        <li>Community updates</li>
-        <li>Limited integrations</li>
-      </ul>
-      <button>Select</button>
-    </div>
-
-    <!-- Ecosaver Plan -->
-    <div class="plan">
-      <h2>Ecosaver Plan</h2>
-      <div class="icon">🌱</div>
-      <p class="price">$10 / month</p>
-      <ul>
-        <li>Everything in Free</li>
-        <li>Unlimited Challenges</li>
-        <li>Priority email support</li>
-        <li>Advanced integrations</li>
-        <li>Monthly insights</li>
-      </ul>
-      <button>Select</button>
-    </div>
-
-    <!-- Echoplus Plan -->
-    <div class="plan">
-      <h2>Echoplus Plan</h2>
-      <div class="icon">🚀</div>
-      <p class="price">$20 / month</p>
-      <ul>
-        <li>Everything in Ecosaver</li>
-        <li>Dedicated support</li>
-        <li>Custom integrations</li>
-        <li>Bonus rewards</li>
-        <li></li>
-      </ul>
-      <button>Select</button>
-    </div>
+<!-- NAV (sticky, not overlapping content) -->
+<nav class="site-nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="home.html">Company Logo Here</a>
+    <ul class="menu" role="menubar" aria-label="Primary">
+      <li role="none"><a role="menuitem" href="About_page.html">About</a></li>
+      <li role="none"><a role="menuitem" class="active" href="pricing.html">Pricing</a></li>
+      <li role="none"><a role="menuitem" href="Shop.html">Store</a></li>
+      <li class="dropdown" role="none">
+        <a class="dropbtn" role="menuitem" href="javascript:void(0)">Services ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="contact.html">Contact</a>
+          <a role="menuitem" href="Reviews.html">Reviews</a>
+          <a role="menuitem" href="login_signup.html">Login/Signup</a>
+        </div>
+      </li>
+    </ul>
   </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Pricing Plans</h1>
+  <p style="margin:8px 0 0;opacity:.9">Choose a plan that fits your sustainability journey 🌿</p>
+</header>
+
+<section class="pricing-wrap">
+  <div class="pricing" aria-label="Pricing plans">
+    <!-- Free -->
+    <article class="plan" aria-labelledby="free-title">
+      <h2 id="free-title">Free Plan</h2>
+      <div class="icon">🌿</div>
+      <div class="price">$0 / month</div>
+      <ul class="features">
+        <li><strong>Basic access</strong></li>
+        <li><strong>Up to 5 challenges</strong></li>
+        <li><strong>Email support</strong></li>
+        <li><strong>Community updates</strong></li>
+        <li><strong>Limited integrations</strong></li>
+      </ul>
+      <button class="select-btn" type="button">Select</button>
+    </article>
+
+    <!-- Ecosaver -->
+    <article class="plan" aria-labelledby="eco-title">
+      <h2 id="eco-title">Ecosaver Plan</h2>
+      <div class="icon">🌱</div>
+      <div class="price">$10 / month</div>
+      <ul class="features">
+        <li><strong>Everything in Free</strong></li>
+        <li><strong>Unlimited challenges</strong></li>
+        <li><strong>Priority email</strong></li>
+        <li><strong>Advanced integrations</strong></li>
+        <li><strong>Unlock the shop</strong></li>
+      </ul>
+      <button class="select-btn" type="button">Select</button>
+    </article>
+
+    <!-- Echoplus -->
+    <article class="plan" aria-labelledby="echo-title">
+      <h2 id="echo-title">Echoplus Plan</h2>
+      <div class="icon">🚀</div>
+      <div class="price">$20 / month</div>
+      <ul class="features">
+        <li><strong>Everything in Ecosaver</strong></li>
+        <li><strong>Dedicated support</strong></li>
+        <li><strong>Custom integrations</strong></li>
+        <li><strong>Monthly insights</strong></li>
+        <li><strong>oooooo</strong></li>
+      </ul>
+      <button class="select-btn" type="button">Select</button>
+    </article>
+  </div>
+</section>
+
+<footer>
+  © 2025 Checo. All Rights Reserved.
+</footer>
+
 </body>
 </html>
