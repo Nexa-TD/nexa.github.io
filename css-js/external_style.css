@@ -96,16 +96,7 @@ h3{
     transform: translate(-50%, -50%);
     color: white;
   }
-.banner-image{
-    background-image: url("Images/capture.png");
-    height: 500px;
-    background-position: center;
-    background-size: cover;
-    position: static;
-    background-attachment: static;
-    background-repeat: no-repeat;
-    z-index: 0;
-  }
+
 h4{ 
     color : rgb(7, 136, 22);
     background-color: white;
