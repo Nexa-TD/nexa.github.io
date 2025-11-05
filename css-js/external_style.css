@@ -97,7 +97,7 @@ h3{
     color: white;
   }
 .banner-image{
-    background-image: url("./Images/Capture.png");
+    background-image: url("Images/Capture.png");
     height: 500px;
     background-position: center;
     background-size: cover;
