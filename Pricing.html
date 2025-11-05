@@ -16,14 +16,14 @@
     --muted: rgba(255,255,255,0.85);
   }
 
-  /* Base */
+ 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
   body { background: var(--page-bg); color: #fff; }
 
-  /* NAV (bug-free: sticky + flex, no floats) */
+  
   .site-nav {
-    position: sticky; /* stays on top without overlapping content */
+    position: sticky;
     top: 0;
     z-index: 1000;
     background: var(--nav-bg);
@@ -53,7 +53,7 @@
     gap: 4px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* avoid overflow on small screens */
+    flex-wrap: wrap; 
   }
   .menu a, .dropbtn {
     display: inline-block;
@@ -65,7 +65,7 @@
   .menu a:hover, .dropdown:hover .dropbtn { background: var(--nav-active); color: #fff; }
   .menu a.active { background: var(--nav-active); color: #fff; }
 
-  /* Dropdown (pure CSS; works on hover and keyboard focus) */
+ 
   .dropdown { position: relative; }
   .dropdown-content {
     position: absolute;
@@ -98,7 +98,7 @@
   }
   .page-header h1 { margin: 0; font-size: 34px; letter-spacing: 0.5px; }
 
-  /* Pricing grid */
+  
   .pricing-wrap {
     background: linear-gradient(180deg, var(--page-bg) 0%, var(--accent) 200%);
   }
@@ -156,7 +156,7 @@
   }
   .select-btn:hover { background: #0b6d19; }
 
-  /* Footer */
+ 
   footer {
     background: #000;
     color: var(--nav-link);
@@ -168,10 +168,10 @@
 </head>
 <body>
 
-<!-- NAV (sticky, not overlapping content) -->
+
 <nav class="site-nav" aria-label="Main">
   <div class="nav-inner">
-    <a class="brand" href="home.html">Company Logo Here</a>
+    <a class="brand" href="home.html">Checo</a>
     <ul class="menu" role="menubar" aria-label="Primary">
       <li role="none"><a role="menuitem" href="About_page.html">About</a></li>
       <li role="none"><a role="menuitem" class="active" href="pricing.html">Pricing</a></li>
