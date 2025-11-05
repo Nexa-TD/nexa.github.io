@@ -1,0 +1,182 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  ul{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: #000000
+
+  }
+  ul li a.active{
+    background-color: rgb(7, 136, 22);
+  }
+  li{
+    
+    float: left;
+  }
+  li a, .dropbtn{
+    display: inline-block;
+    color: rgb(149, 213, 154);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+    background-color: rgb(7, 136, 22);
+    transition: 100ms;
+  }
+  li.dropdown{
+    display: inline-block;
+  }
+  .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: rgb(149, 213, 154);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2000;
+  }
+  .dropdown-content a{
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover{
+    background-color: rgb(7, 136, 22);
+    transition: 100ms;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+
+  /* Start of my css code */
+
+h1{
+    margin-top: 45px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    background-color: green;
+    margin-bottom: 0px;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    height: 93vh;
+    margin-top: 0px; 
+}
+
+h2{
+    margin-top: 0px;
+    text-align: center;
+    color:lightgreen;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: black;
+    padding: 25px 0px;
+    font-weight: bold;
+}
+
+.reviews{
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.reviews-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-right: 10px;
+    gap: 25px;
+    justify-content: center;
+}
+
+.review{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    min-height: 160px;
+    max-width: 250px;
+    padding: 1rem 2rem 2rem 1rem;
+    box-shadow: 2px 6px 10px lightgreen;
+}
+
+.review img{
+    width: 40px;
+    object-fit: cover;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+}
+
+.review p{
+    margin-top: 0.3rem;
+    padding: 0 3rem;
+    font-size: 1.3rem;
+}
+
+.review span, .review strong{
+    font-size: 1.5rem;   
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.reviews, .faqs{
+    padding: 0px;
+    overflow-y: auto;
+}
+
+.faqs{
+    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.faqs-item{
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.faqs-item.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.faqs-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 420ms ease, opacity 220ms ease;
+}
+
+.faqs-item.open .faqs-answer {
+  max-height: 600px;
+  opacity: 1;
+  padding: 8px 12px 0 12px;
+}
+
+
+
