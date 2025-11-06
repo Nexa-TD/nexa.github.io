@@ -6,8 +6,17 @@
 
 
   <style>
+    body {
+      color: #333;
+      margin: 0;
+      padding-top: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(90deg, rgb(38, 184, 15), seagreen);
+      background: cover;
+    }
     /* Navbar */
     ul {
+      align-items: center;
       z-index: 100;
       position: fixed;
       top: 0;
@@ -15,28 +24,27 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: visible;
-      background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      background-color: #000000; 
+    }
+
+    li {
+      list-style: none;
+      float: left;
+    }
+
+    li a, .dropbtn {
+      display: inline-block;
+      padding: 14px 20px;
+      color: rgb(149, 213, 154);
+      text-decoration: none;
+      
     }
 
     ul li a.active {
       background-color: rgb(7, 136, 22);
     }
 
-    li {
-      float: left;
-    }
-
-    li a, .dropbtn {
-      display: inline-block;
-      color: rgb(149, 213, 154);
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+   
 
     li a:hover, .dropdown:hover .dropbtn {
       background-color: rgb(7, 136, 22);
@@ -74,56 +82,43 @@
     }
 
     /* Header */
-    h1 {
-      margin-top: 60px;
-      padding: 20px;
+    header {  
+      margin-top: 0;
+      padding: 80px 0 40px;
       text-align: center;
       color: white;
-      background-color: green;
-      margin-bottom: 0;
-      font-size: 2rem;
+      font-size: 2em;
+      background: linear-gradient(90deg, rgb(38, 184, 15), seagreen);
+
+    }
+    strong{
+      color: black;
     }
 
     /* Layout */
-    body {
-  background: linear-gradient(135deg, #e8f5e9, #ffffff);
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 100vh;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
 
     .container {
-      display: flex;
+      display:flex;
       flex-wrap: wrap;
-      min-height: 100vh;
+      gap: 20px;
+      padding: 40px;
+  
     }
-
     /* Mission Section */
     .mission {
-      flex: 1;
-      background-color: white;
-      padding: 40px;
-      margin-right: 5px;
+      flex: 1 1 45%;
+      color:lightcyan;
+      background-color:;
+      padding: 30px;
       border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .mission h2 {
-      margin-top: 0;
-      text-align: center;
-      color: lightgreen;
-      background-color: black;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      
+      color: black;
+      padding: 10px;
+      border-radius: 8px;
     }
 
     .mission p {
@@ -134,19 +129,16 @@
 
     
     .fact {
-      flex: 1;
-      padding: 40px;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.7);
+      flex: 1 1 45%;
+      padding: 30px;
+      color: whitesmoke;
+      background: rgba(12, 89, 40, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       position: relative;
     }
 
-    .fact h2 {
-      text-align: center;
-      background-color: darkgreen;
-      padding: 15px;
-      margin-top: 0;
-    }
+    
 
     fieldset {
       margin-bottom: 20px;
@@ -158,18 +150,18 @@
     button {
       background-color: #078816;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: all 0.3s;
+      transition: 0.3s ease;
     }
 
     button:hover {
       background-color: #056b12;
       transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     /* Hidden quiz state */
@@ -181,6 +173,9 @@
       text-align: center;
       margin-top: 30px;
     }
+    
+}
+
 
   </style>
 </head>
@@ -189,7 +184,7 @@
     <li><a href="index.html">Checo</a></li>
     <li><a class="active" href="About_page.html">About</a></li>
     <li><a href="Pricing.html">Pricing</a></li>
-    <li><a href="/Shop/Shop.html">Store</a></li>
+    <li><a href="Shop.html">Store</a></li>
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Services</a>
       <div class="dropdown-content">
@@ -199,14 +194,19 @@
       </div>
     </li>
   </ul>
-
-  <h1>About Us</h1>
+  <header>
+  <h1>About Checo</h1></header>
 
   <div class="container">
     <section class="mission">
       <h2>Our Mission</h2>
-      <p>Empower consumers with clear, trustworthy information on the environmental impacts of everyday products.</p>
-      <p>Making sustainable choices SIMPLE, ACCESSIBLE, and REWARDING.</p>
+      <p>At <strong>Checo</strong>, our mission is simple: to empower consumers with clear, trustworthy information on the environmental impacts of everyday products.</p>
+      <p>We believe sustainable choices should be <strong>simple, accessible,</strong> and <strong>rewarding</strong></p>
+      <br>
+      <p>We started Checo with one clear goal -
+        to help people make smarter, more sustainable choices every day.
+        Our team combines technology, data, and a love for the planet to deliver transparent information about how products affect the environment.
+        We believe small decisions—made consistently—can create real impact- and we're here to make those decisions easier.</p>
     </section>
 
     <section class="fact">
@@ -265,5 +265,4 @@
   </script>
 </body>
 </html>
-
->>>>>>
+   
