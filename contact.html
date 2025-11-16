@@ -1,205 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet the Team | EcoCheck</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ===== BASIC THEME ===== */
+    :root {
+      --green-dark: #1b5e20;
+      --green: #2e7d32;
+      --green-light: #e8f5e9;
+      --white: #ffffff;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #e8f5e9 50%, #ffffff 50%);
-      color: #1b5e20;
-      text-align: center;
+      font-family: "Poppins", sans-serif;
+      background: #e8f5e9;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* ===== NAVBAR ===== */
     ul {
-      list-style-type: none;
+      list-style: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      background-color: #2e7d32;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: rgba(46,125,50,0.95);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    li {
-      float: left;
-    }
-
-    li a, .dropbtn {
-      display: inline-block;
+    ul li a, .dropbtn {
       color: white;
-      text-align: center;
-      padding: 14px 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      padding: 12px 18px;
+      border-radius: 8px;
+      transition: 0.25s;
+      font-weight: 500;
     }
 
-    li a:hover, .dropdown:hover .dropbtn {
-      background-color: #1b5e20;
+    ul li a:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
     }
 
-    li.dropdown {
-      display: inline-block;
-    }
+    .dropdown { position: relative; }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #ffffff;
+      background: white;
+      border-radius: 10px;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 0 0 6px 6px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      overflow: hidden;
     }
 
     .dropdown-content a {
-      color: #2e7d32;
-      padding: 12px 16px;
-      text-decoration: none;
+      color: var(--green-dark);
+      padding: 12px;
       display: block;
-      text-align: left;
-      transition: background-color 0.2s;
+      transition: 0.2s;
     }
 
     .dropdown-content a:hover {
-      background-color: #e8f5e9;
+      background: var(--green-light);
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    .active {
-      background-color: #1b5e20;
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 330px;
+      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* ===== HEADERS ===== */
-    h1 {
-      background-color: #2e7d32;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero h1 {
+      position: relative;
       color: white;
-      padding: 30px 0;
-      margin: 0;
-      letter-spacing: 1px;
-      font-size: 2.2em;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+      animation: slideDown 0.8s ease;
     }
 
-    h2 {
-      color: #2e7d32;
-      margin-top: 40px;
-      font-size: 1.8em;
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    /* ===== TEAM GRID ===== */
+    /* ===== FLOATING ICONS ===== */
+    .leaf {
+      position: absolute;
+      width: 40px;
+      opacity: 0.7;
+      animation: float 7s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(-50px) rotate(0deg); }
+      to { transform: translateY(300px) rotate(360deg); }
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team-section {
+      position: relative;
+      padding: 70px 20px;
+      background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1500&q=80");
+      background-size: cover;
+      background-position: center;
+      margin-top: 0;
+    }
+
+    .team-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(
+        rgba(255,255,255,0.85),
+        rgba(232,245,233,0.88)
+      );
+      backdrop-filter: blur(3px);
+    }
+
+    .eco-icon {
+      position: absolute;
+      width: 45px;
+      opacity: 0.65;
+      animation: ecoFloat 10s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes ecoFloat {
+      from { transform: translateY(0) rotate(0); }
+      to { transform: translateY(-50px) rotate(360deg); }
+    }
+
+    .team-banner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 40px;
+    }
+
     .team-container {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
-      padding: 50px 20px;
+      gap: 35px;
     }
 
     .member {
-      background-color: white;
-      border: 2px solid #2e7d32;
-      border-radius: 12px;
-      width: 220px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      width: 250px;
+      padding: 28px;
+      text-align: center;
+      border: 1px solid rgba(46,125,50,0.25);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+      transition: 0.35s;
+      position: relative;
     }
 
     .member:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+      transform: translateY(-12px) scale(1.04) rotate(1deg);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.72);
+    }
+
+    .member:hover::after {
+      content: "🌱 Eco Leader";
+      position: absolute;
+      top: -15px;
+      right: -5px;
+      background: var(--green);
+      color: white;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+      animation: popBadge 0.4s ease;
+    }
+
+    @keyframes popBadge {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     .member img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 3px solid #2e7d32;
+      border: 4px solid var(--green);
       object-fit: cover;
-      margin-bottom: 10px;
     }
 
     .member strong {
       display: block;
-      font-size: 16px;
-      color: #1b5e20;
+      font-size: 1.2rem;
+      margin-top: 12px;
+      color: var(--green-dark);
     }
 
     .member a {
-      color: #2e7d32;
+      color: var(--green);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 0.9rem;
     }
 
-    .member a:hover {
-      text-decoration: underline;
+    /* ===== CONTACT SECTION ===== */
+    h2 {
+      text-align: center;
+      color: var(--green);
+      font-size: 2rem;
+      margin-top: 40px;
     }
 
-    /* ===== CONTACT FORM ===== */
     form {
-      background-color: white;
-      max-width: 500px;
-      margin: 40px auto;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      max-width: 550px;
+      margin: 30px auto 60px;
       padding: 30px;
-      border: 2px solid #2e7d32;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      border: 1px solid rgba(46,125,50,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-    }
+    label { font-weight: 600; }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 6px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: inherit;
     }
 
     button {
-      background-color: #2e7d32;
+      width: 100%;
+      padding: 14px;
+      background: var(--green);
       color: white;
       border: none;
-      padding: 10px 25px;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 8px;
       margin-top: 15px;
-      transition: background-color 0.3s, transform 0.2s;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.25s;
     }
 
     button:hover {
-      background-color: #1b5e20;
-      transform: scale(1.05);
+      background: var(--green-dark);
+      transform: scale(1.04);
     }
 
-    /* ===== FOOTER ===== */
     footer {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #2e7d32;
+      background: var(--green);
       color: white;
-      font-size: 0.9em;
+      text-align: center;
+      padding: 22px;
     }
   </style>
 </head>
 
 <body>
+
   <!-- NAVBAR -->
   <ul>
-    <li><a class="active" href="index.html">Checo</a></li>
+    <li><a href="index.html">Checo</a></li>
     <li><a href="About_page.html">About</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="Shop.html">Store</a></li>
@@ -213,72 +321,84 @@
     </li>
   </ul>
 
-  <h1>Meet the Team</h1>
-
-  <!-- TEAM MEMBERS -->
-  <div class="team-container">
-    <div class="member">
-      <img src="assets/avatar1.jpg" alt="Abdallah Ismail">
-      <strong>Abdallah Ismail</strong>
-      <a href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
-    </div>
-
-    <div class="member">
-      <img src="assets/avatar2.jpg" alt="Canaan Elwafi">
-      <strong>Canaan Elwafi</strong>
-      <a href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
-    </div>
-
-    <div class="member">
-      <img src="assets/avatar3.jpg" alt="Yao Kloma">
-      <strong>Yao Kloma</strong>
-      <a href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
-    </div>
-
-    <div class="member">
-      <img src="assets/avatar4.jpg" alt="Loryann Kamdem">
-      <strong>Loryann Kamdem</strong>
-      <a href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
-    </div>
-
-    <div class="member">
-      <img src="assets/avatar5.jpg" alt="Carl Tadross">
-      <strong>Carl Tadross</strong>
-      <a href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
-    </div>
-
-    <div class="member">
-      <img src="assets/avatar6.jpg" alt="Pascal Ngabire">
-      <strong>Pascal Ngabire</strong>
-      <a href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
-    </div>
+  <!-- HERO -->
+  <div class="hero">
+    <img class="leaf" src="https://cdn-icons-png.flaticon.com/512/7658/7658975.png" style="left:10%; animation-delay:0s;">
+    <img class="leaf" src="https://cdn-icons-png.flaticon.com/512/7658/7658975.png" style="left:60%; animation-delay:2s;">
+    <img class="leaf" src="https://cdn-icons-png.flaticon.com/512/7658/7658975.png" style="left:80%; animation-delay:4s;">
+    <h1>Meet the EcoCheck Team</h1>
   </div>
+
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+
+    <!-- Animated eco icons -->
+    <img class="eco-icon" src="https://cdn-icons-png.flaticon.com/512/7658/7658975.png" style="top: 20%; left: 10%; animation-delay: 0s;">
+    <img class="eco-icon" src="https://cdn-icons-png.flaticon.com/512/7658/7659043.png" style="top: 65%; left: 80%; animation-delay: 2s;">
+    <img class="eco-icon" src="https://cdn-icons-png.flaticon.com/512/7658/7658999.png" style="top: 40%; left: 50%; animation-delay: 4s;">
+
+    <h2 class="team-banner">Our Mission is Powered by People 🌱</h2>
+
+    <div class="team-container">
+
+      <div class="member">
+        <img src="assets/avatar1.jpg">
+        <strong>Abdallah Ismail</strong>
+        <a href="mailto:abdallahis724@gmail.com">abdallahis724@gmail.com</a>
+      </div>
+
+      <div class="member">
+        <img src="assets/avatar2.jpg">
+        <strong>Canaan Elwafi</strong>
+        <a href="mailto:celwafi5@gmail.com">celwafi5@gmail.com</a>
+      </div>
+
+      <div class="member">
+        <img src="assets/avatar3.jpg">
+        <strong>Yao Kloma</strong>
+        <a href="mailto:jeanwxzy2@gmail.com">jeanwxzy2@gmail.com</a>
+      </div>
+
+      <div class="member">
+        <img src="assets/avatar4.jpg">
+        <strong>Loryann Kamdem</strong>
+        <a href="mailto:loryannwiyasama@gmail.com">loryannwiyasama@gmail.com</a>
+      </div>
+
+      <div class="member">
+        <img src="assets/avatar5.jpg">
+        <strong>Carl Tadross</strong>
+        <a href="mailto:tadrosscarl@gmail.com">tadrosscarl@gmail.com</a>
+      </div>
+
+      <div class="member">
+        <img src="assets/avatar6.jpg">
+        <strong>Pascal Ngabire</strong>
+        <a href="mailto:Ngabirepascalny@gmail.com">Ngabirepascalny@gmail.com</a>
+      </div>
+
+    </div>
+
+  </section>
 
   <!-- CONTACT FORM -->
   <h2>Contact Us</h2>
   <form id="contact-form">
-    <label for="fullname">Full Name</label>
-    <input id="fullname" name="fullname" type="text" placeholder="e.g., Abdallah Ismail" required>
+    <label>Full Name</label>
+    <input type="text" required>
 
-    <label for="email">E-mail</label>
-    <input id="email" name="email" type="email" placeholder="you@ecocheck.example" required>
+    <label>Email</label>
+    <input type="email" required>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    <label>Message</label>
+    <textarea rows="5" required></textarea>
 
     <button type="submit">Send Message</button>
   </form>
 
   <footer>
-    <p>EcoCheck © 2025 — Building a Greener Future 🌿</p>
+    EcoCheck © 2025 — Helping the planet, one challenge at a time 🌍
   </footer>
 
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event){
-      event.preventDefault();
-      alert("Thank you for contacting us! We'll get back to you soon.");
-      this.reset();
-    });
-  </script>
 </body>
 </html>
