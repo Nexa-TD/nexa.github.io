@@ -14,16 +14,83 @@
       text-align: center;
     }
 
+    /* ===== NAVBAR ===== */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #2e7d32;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    li {
+      float: left;
+    }
+
+    li a, .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: #1b5e20;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .dropdown-content a {
+      color: #2e7d32;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e8f5e9;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .active {
+      background-color: #1b5e20;
+    }
+
+    /* ===== HEADERS ===== */
     h1 {
       background-color: #2e7d32;
       color: white;
       padding: 30px 0;
       margin: 0;
+      letter-spacing: 1px;
+      font-size: 2.2em;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       color: #2e7d32;
       margin-top: 40px;
+      font-size: 1.8em;
     }
 
     /* ===== TEAM GRID ===== */
@@ -42,11 +109,12 @@
       width: 220px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .member:hover {
       transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
     }
 
     .member img {
@@ -117,16 +185,34 @@
       transform: scale(1.05);
     }
 
+    /* ===== FOOTER ===== */
     footer {
       margin-top: 40px;
       padding: 20px;
       background-color: #2e7d32;
       color: white;
+      font-size: 0.9em;
     }
   </style>
 </head>
 
 <body>
+  <!-- NAVBAR -->
+  <ul>
+    <li><a class="active" href="index.html">Checo</a></li>
+    <li><a href="About_page.html">About</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="Shop.html">Store</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Services</a>
+      <div class="dropdown-content">
+        <a href="contact.html">Contact</a>
+        <a href="Reviews.html">Reviews</a>
+        <a href="login_signup.html">Login/Signup</a>
+      </div>
+    </li>
+  </ul>
+
   <h1>Meet the Team</h1>
 
   <!-- TEAM MEMBERS -->
@@ -168,6 +254,7 @@
     </div>
   </div>
 
+  <!-- CONTACT FORM -->
   <h2>Contact Us</h2>
   <form id="contact-form">
     <label for="fullname">Full Name</label>
@@ -187,7 +274,6 @@
   </footer>
 
   <script>
-    
     document.getElementById("contact-form").addEventListener("submit", function(event){
       event.preventDefault();
       alert("Thank you for contacting us! We'll get back to you soon.");
@@ -196,4 +282,3 @@
   </script>
 </body>
 </html>
-
