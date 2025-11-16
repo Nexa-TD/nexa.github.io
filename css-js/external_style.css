@@ -17,6 +17,7 @@ body{
   }
   ul li a.active{
     background-color: rgb(7, 136, 22);
+    background: linear-gradient(90deg, rgb(38, 184, 15), seagreen);
   }
   li{
     
