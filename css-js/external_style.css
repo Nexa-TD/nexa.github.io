@@ -113,7 +113,7 @@ p{
     top : 150%;
   }
 .button {
-  background-color: rgb(7, 136, 22) ;
+  background-color: linear-gradient(90deg, rgb(7, 136, 22), lightseagreen) ;
   border: 1px solid;
   border-color: white;
   color: white;
