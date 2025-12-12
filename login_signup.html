@@ -17,165 +17,64 @@
             color: #2e7d32;
             padding-top: 100px;
         }   
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #000000;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-        }
-
-        .nav-logo {
-            color: rgb(149, 213, 154);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 14px 16px;
-            background-color: rgb(7, 136, 22); /* active state */
-            margin: -14px 0;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu li a,
-        .dropdown .dropbtn {
-            color: rgb(149, 213, 154);
-            text-decoration: none;
-            padding: 14px 16px;
-            display: block;
-            transition: background-color 0.2s;
-        }
-
-        .nav-menu li a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: rgb(7, 136, 22);
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: rgb(149, 213, 154);
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-            z-index: 2000;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgb(7, 136, 22);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a.active {
-            background-color: rgb(7, 136, 22);
-            font-weight: bold;
-        }
-/* Hamburger Menu */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.nav-toggle-label span {
-  background: rgb(149, 213, 154);
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-
-/* === MOBILE STYLES === */
-@media (max-width: 768px) {
-  .nav-toggle-label {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
+        ul{
+    z-index: 100;
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: #000000;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-  }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: #000000
 
-  .nav-toggle:checked ~ .nav-menu {
-    max-height: 400px; /* Enough for all items */
   }
-
-  .nav-menu li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
+  ul li a.active{
     background-color: rgb(7, 136, 22);
-    float: none;
   }
-
-  .dropdown:hover .dropdown-content {
-    display: none; /* Hover doesn't work well on mobile */
+  li{
+    
+    float: left;
   }
-
-  .nav-toggle:checked ~ .nav-menu .dropdown .dropdown-content {
-    display: block; /* Shows when menu is open */
+  li a, .dropbtn{
+    display: inline-block;
+    color: rgb(149, 213, 154);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
   }
-}
+  li a:hover, .dropdown:hover .dropbtn{
+    background-color: rgb(7, 136, 22);
+    transition: 100ms;
+  }
+  li.dropdown{
+    display: inline-block;
+  }
+  .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: rgb(149, 213, 154);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2000;
+  }
+  .dropdown-content a{
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover{
+    background-color: rgb(7, 136, 22);
+    transition: 100ms;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
     </style>
 </head>
-<body>
-    <nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="nav-logo">Checo</a>
-     <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>   
-    <ul class="nav-menu">
+<body>  
+    <ul>
   <li><a href="About_page.html">About</a></li>
   <li><a href="Pricing.html">Pricing</a></li>
   <li><a href="Shop.html">Store</a></li>
@@ -188,10 +87,11 @@
       <a class="active" href="login_signup.html">Login/Signup</a>
     </div>
   </li>
-</ul></div></nav>
+</ul>
     <h1>Coming Soon!</h1>
 </body>
 </html>
+
 
 
 
