@@ -72,11 +72,80 @@
         .dropdown:hover .dropdown-content{
             display: block;
         }
+        /* Hamburger Menu */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  background: rgb(149, 213, 154);
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    max-height: 400px; /* Enough for all items */
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: rgb(7, 136, 22);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* Hover doesn't work well on mobile */
+  }
+
+  .nav-toggle:checked ~ .nav-menu .dropdown .dropdown-content {
+    display: block; /* Shows when menu is open */
+  }
+}
     </style>
 </head>
 <body>
-    <ul>
-  <li><a href="index.html">Checo</a></li>
+    <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.htnl" class="nav-logo active">Checo</a>
+     <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>   
+    <ul class="nav-menu">
   <li><a href="About_page.html">About</a></li>
   <li><a href="Pricing.html">Pricing</a></li>
   <li><a href="Shop.html">Store</a></li>
@@ -89,10 +158,11 @@
       <a class="active" href="login_signup.html">Login/Signup</a>
     </div>
   </li>
-</ul>
+</ul></div></nav>
     <h1>Coming Soon!</h1>
 </body>
 </html>
+
 
 
 
